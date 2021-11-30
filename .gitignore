@@ -3,5 +3,5 @@
 __pycache__
 .DS_Store
 /.idea/
-
+data.db
 /备忘.md
