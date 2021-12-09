@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.name }}de watchlist </title>
+    <!-- 这里是标记 -->
+    <link rel="icon" href = "{{ url_for('static',filename='style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css" >
+
+
+
+
+</head>
+<body>
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static',filename='images/avatar.png')}}">
+    {{ user.name }}'s watchlist
+</h2>
+<ul class="movie-list">
+    <li> <!-- 表示在一个列当中 -->
+        page not found! - 404
+        <span class="float-right"> <!-- 表示一个独立的文字部分 -->
+            <a href="{{ url_for('index') }}">go back</a>
+        </span>
+    </li>
+</ul>
+
+
+
+</body>
+</html>

@@ -36,7 +36,7 @@ def index():
     return render_template('index.html',name=user,movies=movies)
 
 
-class User(db.Model):
+class User(db.Model): # 继承了db的方法
     id = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.String(20))
 
@@ -48,7 +48,7 @@ class Movie(db.Model):
 
 import click # 这个干什么？
 
-@app.cli.command()
+@app.cli.command() #从app的路由模块创建
 @click.option('--drop',is_flag=True, help='Create after drop') # 这个是增加选择
 def initdb(drop):
     if drop:
@@ -86,6 +86,12 @@ def forge():
 
     db.session.commit()
     click.echo('write done')
+    # 注意这里的db需要自己构造一下 后续考虑上传git
+    # 这里涉及到极少量的表关联
+
+
+
+
 
 
 
